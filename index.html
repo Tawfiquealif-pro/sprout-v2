@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Sprout - Plant Identifier</title>
+    <link rel="stylesheet" href="new.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="images/sprout.png" alt="">
+        </div>
+        <div class="menu-toggle" id="navBtn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav id="navbar">
+            <a href="#">Home</a>
+            <a href="#">About me</a>
+            <a href="#">More Project</a>
+            <a href="#">Support</a>
+        </nav>
+
+    </header>
+
+    <!-- Main Content -->
+    <section class="main">
+        <div class="intro">
+            <img src="images/sprout.png" alt="">
+            <div class="group_a">
+                <h1>Sprout is all in one plant identifier</h1>
+                <p><a href="#">Create an account</a> Or <a href="#">try for free</a></p>
+            </div>
+        </div>
+
+        <div class="white_box">
+        <!-- Search Bar -->
+        <div class="search-box">
+            <input type="text" placeholder="Search for plant">
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+
+        <div class="tabs">
+                    <!-- Drag-and-Drop Box -->
+                
+                <div class="loading" id="loading">
+                    <div id="overlay" class="overlay">
+                        <p id="loading_status">Fetching..</p>
+                        <div class="loader"></div>
+                        <button id="reset" class="back_button" style="width: 20%; font-size: 18px; padding: 0;">Reset</button>
+                    </div>
+                    <div class="upload-box" id="dropbox">
+                        <h2>Sprout helps your plant grow</h2>
+                        <div class="drag-area">
+                            <p>Place your plant image here</p>
+                            <input type="file" id="fileInput" accept="image/*" hidden>
+                        </div>
+                        <div class="click-area">
+                            <p>Click a image</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-------Initially stays hidden----when reslut are complete then they are presented here -->
+            <div class="result_tab" id="result_tab">
+                <img src="images/green-wayanad-agro-links-plant-v.jpg" id="thumbnail" alt="">
+                <div class="details">
+                    <ul>
+                        <li> <strong>Name : </strong> <span id="plant_name"></span></li>
+                        <li> <strong>Classification : </strong><span id="classification"></span></li>
+                        <li> <strong>Usually found : </strong><span id="common_place"></span></li>
+                        <li> <strong>life span  : </strong><span id="life_span"></span></li>
+                        <li> <strong>Local name : </strong><span id="common_name"></span></li>
+                    </ul>
+                    <h3>Intresting Fact</h3>
+                    <p id="facts">Well its is the most consumed fruit in south east asia specially in Bangladesh , Bangladesh alone consume 1.2 million kathal each year </p>
+                    <div class="buttons_group">
+                        <button class="ai_button" id="ai_button">Ask AI</button>
+                        <button class="back_button" id="back_button">Back</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat_box" id="chat_box">
+                <div class="overlay" id="warning_layer">
+                    <p>If you leave your chat would no longer be saved</p>
+                    <div class="choice">
+                        <button class="back_button" id="leave">Leave</button>
+                        <button class="ai_button" id="stay">Stay</button>
+                    </div>
+                </div>
+                <div class="chat_heading">
+                    <div class="g">
+                        <img src="images/green-wayanad-agro-links-plant-v.jpg" id="imgIcon" alt="">
+                        <div class="info">
+                            <h4>Talking about</h4>
+                            <p id="topic_name"></p>
+                        </div>
+                    </div>
+                    <div class="close">
+                        <i class="fa-solid fa-xmark" id="close_chat"></i>
+                    </div>
+                </div>
+                <hr>
+                <div class="chat_body" id="chat_body">
+                <!----    <div class="message user-message">
+                        hey how are you? are youe trying to improve day by day? if yes then how write a complete summary
+                    </div>
+                    <div class="message bot-message">
+                        <p>
+                           whenever need to write paragraph use p tag 
+                        </p>
+                        <h3>Use h3 tag for heading</h3>
+                    <ul>
+                        <li><strong>Light: </strong> use strong tag in li tags to high light the keypoints</li>
+                        <li><strong>Soil: </strong> keep your description simple</li>
+                    </ul>
+                    <p>In ending you can again use p tag to write conclusion or summary within 1 or 2 line of paragraph</p>
+                    </div>---->
+                </div>
+                <hr>
+                <div class="chat-input">
+                    <input type="text" id="user-message" placeholder="Ask about your plant care...">
+                    <button id="submit_message"><i class="fa-solid fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- Preview -->
+        <div id="preview"></div>
+
+    </section>
+    <footer class="fade-in">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>ABOUT SPROUT</h3>
+                <ul>
+                    <li><a href="#">Vision</a></li>
+                    <li><a href="#">Achivement</a></li>
+                    <li><a href="#">Contributuion</a></li>
+                    <li><a href="#">Write us</a></li>
+                    <li><a href="#">Help</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>ABOUT ME</h3>
+                <ul>
+                    <li><a href="#">Background</a></li>
+                    <li><a href="#">Study</a></li>
+                    <li><a href="#">ECA</a></li>
+                    <li><a href="#">Achievements</a></li>
+                    <li><a href="#">Vision</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>ABOUT DEVELOPER</h3>
+                <div class="developer-info">
+                    Hi there, I’m <a href="https://www.facebook.com/profile.php?id=100086667810669">Tawfique Alif</a>, currently pursuing study in science at BAFSK. I’m about to graduate in 2026. I contributed building this website. Like my work? You can reachout on my <a href="https://www.facebook.com/profile.php?id=100086667810669">LinkedIn</a> or mail me at <a href="mailto:alifnew225@gmail.com">alifnew225@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const navBtn = document.getElementById('navBtn')
+        const navMenu= document.getElementById('navbar')
+        navBtn.addEventListener('click', function(){
+            // Toggle 'display' style between 'block' and 'none'
+            if (navMenu.style.top === '45px') {
+                navMenu.style.top = '-100px';
+                navMenu.style.zIndex = '-10'  // Hide menu
+            } else {
+                navMenu.style.zIndex = '1'  // show menu
+                navMenu.style.top = '45px';    // Show menu
+            }
+        })
+
+
+
+    </script>
+
+    <script src="test.js"></script>
+    
+</body>
+</html>

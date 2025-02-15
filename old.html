@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plant Identifier</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🌿 Plant Identifier</h1>
+    
+    <input type="file" id="imageInput" accept="image/*">
+    <button id="identifyButton">Identify Plant</button>
+    
+    <div class="image-preview" id="imagePreview"></div>
+    
+    <div class="result" id="result"></div>
+    <div id="chat-container">
+        <div id="chat-header">🌿 Plant Care Chatbot</div>
+        <div id="chat-box"></div>
+        <div id="chat-input">
+            <input type="text" id="user-message" placeholder="Ask about your plant care...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
